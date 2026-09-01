@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zoomies Creative</title>
+<meta name="description" content="Zoomies Creative is an independent app studio building small, sharp mobile apps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14133A;
+    --ink-soft:#5B5885;
+    --base:#F4F2FB;
+    --base-alt:#EDE9FA;
+    --lime:#B6FF3E;
+    --coral:#FF4D6D;
+    --line:rgba(20,19,58,0.12);
+    --max:920px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--base);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Space Grotesk', sans-serif;
+    color:var(--ink);
+    margin:0;
+    line-height:1.08;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  /* ---------- header ---------- */
+  header{
+    padding:28px 0;
+  }
+  .header-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .wordmark{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    font-size:19px;
+    letter-spacing:-0.01em;
+    text-decoration:none;
+  }
+  nav{display:flex; gap:28px;}
+  nav a{
+    font-size:15px;
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+    padding-bottom:2px;
+    transition:color 0.15s ease, border-color 0.15s ease;
+  }
+  nav a:hover{color:var(--ink); border-color:var(--ink);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:64px 0 96px;
+    overflow:hidden;
+  }
+  .streaks{
+    position:absolute;
+    top:-40px;
+    right:-60px;
+    width:420px;
+    height:420px;
+    pointer-events:none;
+    z-index:0;
+  }
+  .hero-inner{position:relative; z-index:1;}
+  .hero h1{
+    font-size:clamp(38px, 6vw, 64px);
+    max-width:11.5em;
+    font-weight:700;
+    letter-spacing:-0.015em;
+  }
+  .hero p{
+    max-width:520px;
+    margin-top:22px;
+    font-size:18px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- apps ---------- */
+  .apps{padding:16px 0 88px;}
+  .apps h2{
+    font-size:28px;
+    margin-bottom:44px;
+  }
+  .app-row{
+    display:flex;
+    gap:32px;
+    align-items:flex-start;
+    padding:32px 0;
+    border-top:1px solid var(--line);
+  }
+  .app-row:last-child{border-bottom:1px solid var(--line);}
+  .app-row:nth-child(even){flex-direction:row-reverse; text-align:right;}
+  .app-row:nth-child(even) .app-text{align-items:flex-end;}
+  .app-icon{
+    flex:0 0 auto;
+    width:72px;
+    height:72px;
+    border-radius:18px;
+    background:linear-gradient(135deg, var(--ink) 0%, #2A2860 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:22px;
+    color:var(--lime);
+  }
+  .app-text{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    flex:1;
+  }
+  .app-name{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    font-size:22px;
+  }
+  .app-desc{
+    color:var(--ink-soft);
+    margin-top:8px;
+    max-width:480px;
+  }
+  .app-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:16px;
+    font-size:15px;
+    font-weight:500;
+    text-decoration:none;
+    color:var(--coral);
+    border-bottom:1px solid transparent;
+    transition:border-color 0.15s ease;
+  }
+  .app-link:hover{border-color:var(--coral);}
+
+  /* ---------- footer ---------- */
+  footer{
+    padding:40px 0 56px;
+    border-top:1px solid var(--line);
+  }
+  .footer-inner{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:16px;
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+  .footer-inner a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+  }
+  .footer-inner a:hover{color:var(--ink); border-color:var(--ink);}
+
+  @media (max-width:640px){
+    .app-row, .app-row:nth-child(even){
+      flex-direction:column;
+      text-align:left;
+    }
+    .app-row:nth-child(even) .app-text{align-items:flex-start;}
+    nav{gap:18px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <a class="wordmark" href="#top">Zoomies Creative</a>
+    <nav>
+      <a href="#apps">Apps</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <svg class="streaks" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <line x1="120" y1="0" x2="420" y2="300" stroke="#B6FF3E" stroke-width="10" stroke-linecap="round" opacity="0.9"/>
+    <line x1="180" y1="0" x2="420" y2="230" stroke="#B6FF3E" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+    <line x1="230" y1="10" x2="420" y2="170" stroke="#B6FF3E" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
+  </svg>
+  <div class="wrap hero-inner">
+    <h1>Small apps, built one sudden burst of energy at a time.</h1>
+    <p>Zoomies Creative is an independent app studio run by a single very determined developer. Every app starts as a question worth answering, and ships without the bloat.</p>
+  </div>
+</section>
+
+<section class="apps" id="apps">
+  <div class="wrap">
+    <h2>Apps</h2>
+
+    <div class="app-row">
+      <div class="app-icon">SM</div>
+      <div class="app-text">
+        <div class="app-name">STOP ME</div>
+        <div class="app-desc">Turns any price tag into hours of your working life, right before you buy. A gut-check for mindful spending, not another budgeting spreadsheet.</div>
+        <a class="app-link" href="https://apps.apple.com/app/id6804309133">View on the App Store &rarr;</a>
+      </div>
+    </div>
+
+    <div class="app-row">
+      <div class="app-icon">MH</div>
+      <div class="app-text">
+        <div class="app-name">MineHop</div>
+        <div class="app-desc">Add a short description of MineHop here.</div>
+        <a class="app-link" href="#">View on the App Store &rarr;</a>
+      </div>
+    </div>
+
+    <div class="app-row">
+      <div class="app-icon">SS</div>
+      <div class="app-text">
+        <div class="app-name">Space Stack</div>
+        <div class="app-desc">Add a short description of Space Stack here.</div>
+        <a class="app-link" href="#">View on the App Store &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap footer-inner">
+    <span>&copy; 2026 Zoomies Creative</span>
+    <span><a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="mailto:hello@zoomiescreative.com">hello@zoomiescreative.com</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
