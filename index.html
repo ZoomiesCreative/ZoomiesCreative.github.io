@@ -123,6 +123,7 @@
     font-style:italic;
     font-weight:500;
   }
+  .app-panel + .app-panel{margin-top:28px;}
   .app-panel{
     background:var(--panel);
     border-radius:4px;
@@ -170,6 +171,20 @@
     transition:border-color 0.15s ease, color 0.15s ease;
   }
   .app-link:hover{color:var(--rose); border-color:var(--gold);}
+  .app-links{display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:20px;}
+  .app-links .app-link{margin-top:0;}
+  .app-soon{
+    display:inline-block;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    border:1px solid var(--sage);
+    border-radius:999px;
+    padding:1px 10px;
+    margin-left:10px;
+    vertical-align:middle;
+  }
 
   /* ---------- footer ---------- */
   footer{
@@ -189,6 +204,8 @@
   .footer-inner a:hover{color:var(--ink); border-color:var(--gold);}
 
   @media (max-width:600px){
+    .app-links{justify-content:center;}
+    .app-soon{margin:6px 0 0; display:table; margin-left:auto; margin-right:auto;}
     .app-panel{
       flex-direction:column;
       align-items:center;
@@ -230,6 +247,19 @@
 <section class="apps" id="apps">
   <div class="wrap">
     <h2>Apps</h2>
+
+    <div class="app-panel">
+      <div class="app-icon">WT</div>
+      <div class="app-text">
+        <div class="app-name">Word Taper <span class="app-soon">Coming soon</span></div>
+        <div class="app-desc">A bright, playful word puzzle: taper a word all the way down to A or I, one letter at a time. Remove, swap or add a letter each step &mdash; but every step has to be a real word. Hundreds of levels, and odd little words explained as you go.</div>
+        <div class="app-links">
+          <!-- When it's live, swap this span for:
+               <a class="app-link" href="APP_STORE_LINK">View on the App Store &rarr;</a> -->
+          <a class="app-link" href="word-taper/privacy.html">Privacy policy &rarr;</a>
+        </div>
+      </div>
+    </div>
 
     <div class="app-panel">
       <div class="app-icon">SM</div>
